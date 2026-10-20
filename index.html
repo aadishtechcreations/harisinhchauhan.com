@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b2d">
+<title>Harisinh Chauhan | Personal Portfolio</title>
+
+<style>
+:root {
+  --navy: #101b2d;
+  --blue: #183e66;
+  --gold: #d6b574;
+  --cream: #f7f5f0;
+  --white: #ffffff;
+  --muted: #aab6c5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cream);
+  color: #192536;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: rgba(16, 27, 45, .97);
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(214,181,116,.35);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: .88rem;
+  color: #e0e6ed;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding: 90px 9%;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(12,24,42,.97), rgba(15,37,62,.87)),
+    radial-gradient(circle at 80% 20%, #35628a, #101b2d 65%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "HC";
+  position: absolute;
+  right: 5%;
+  bottom: -110px;
+  font-size: clamp(250px, 36vw, 520px);
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 780px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 1.08;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #d3dce7;
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 4px;
+  font-weight: 650;
+  transition: .25s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #172438;
+}
+
+.btn-gold:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #8293a8;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+section {
+  padding: 85px 9%;
+  scroll-margin-top: 75px;
+}
+
+.section-label {
+  color: #9a7638;
+  font-size: .77rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.intro {
+  max-width: 760px;
+  color: #5b6572;
+  font-size: 1.04rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.quote {
+  border-left: 3px solid var(--gold);
+  padding: 20px 25px;
+  background: white;
+  box-shadow: 0 10px 35px #18263a0b;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  color: #273a50;
+  margin-top: 28px;
+}
+
+.profile-card {
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  padding: 36px;
+  box-shadow: 0 18px 50px #101b2d20;
+}
+
+.profile-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  margin-bottom: 22px;
+  color: var(--gold);
+}
+
+.detail {
+  padding: 13px 0;
+  border-bottom: 1px solid #ffffff1b;
+}
+
+.detail:last-child {
+  border-bottom: none;
+}
+
+.detail strong {
+  display: block;
+  color: #aebdd0;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.detail span {
+  font-size: 1rem;
+}
+
+.career {
+  background: #eae8e1;
+}
+
+.career-card {
+  max-width: 900px;
+  margin-top: 35px;
+  background: white;
+  padding: 35px;
+  border-radius: 6px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 12px 35px #1925360c;
+}
+
+.career-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.career-card .location {
+  color: #9a7638;
+  font-weight: 650;
+  margin-bottom: 18px;
+}
+
+.career-card p {
+  color: #5b6572;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.interest-card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 6px;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 10px 35px #1925360b;
+  transition: transform .25s;
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+}
+
+.interest-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.interest-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.interest-card p {
+  color: #657080;
+  font-size: .95rem;
+}
+
+.market {
+  background: var(--navy);
+  color: white;
+}
+
+.market .intro {
+  color: #bac6d5;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 35px;
+}
+
+.market-card {
+  padding: 32px;
+  border: 1px solid #ffffff20;
+  border-radius: 6px;
+  background: #ffffff08;
+}
+
+.market-card h3 {
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.market-card p {
+  color: #c4cfdd;
+  margin-bottom: 18px;
+}
+
+.market-link {
+  display: inline-block;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+}
+
+.market-link:hover {
+  color: white;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact .intro {
+  margin: 0 auto;
+}
+
+.contact-panel {
+  max-width: 720px;
+  margin: 35px auto 0;
+  background: white;
+  border-radius: 8px;
+  padding: 35px;
+  box-shadow: 0 12px 40px #19253610;
+}
+
+.contact-row {
+  padding: 15px 0;
+  border-bottom: 1px solid #e9e9e9;
+  overflow-wrap: anywhere;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-row strong {
+  display: block;
+  color: #8c6b31;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-row a:hover {
+  color: #9a7638;
+}
+
+footer {
+  background: #0b1422;
+  color: #aeb9c8;
+  text-align: center;
+  padding: 28px 7%;
+  font-size: .88rem;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .about-grid,
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 75px 7%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="#home">HARISINH <span>CHAUHAN</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#career">Career</a>
+    <a href="#interests">Interests</a>
+    <a href="#markets">Markets & News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">A Life of Experience & Discovery</div>
+      <h1>Harisinh <span>Chauhan</span></h1>
+      <p>
+        81 years of life, memories, and experience.
+        Former veterinarian, passionate traveler, curious explorer,
+        and lifelong follower of the financial markets.
+      </p>
+      <div class="buttons">
+        <a href="#about" class="btn btn-gold">Discover My Story</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">A Little About Me</div>
+        <h2>A Journey Shaped by Experience</h2>
+        <p class="intro">
+          Born in India, Harisinh Chauhan has built a life defined by
+          experience, curiosity, and an appreciation for the world around him.
+          At 81, his interests span the places he explores, the knowledge he
+          gains, and the financial developments he follows.
+        </p>
+        <div class="quote">
+          “Every day is another opportunity to learn something new,
+          discover something remarkable, and appreciate life's journey.”
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h3>Personal Profile</h3>
+        <div class="detail">
+          <strong>Name</strong>
+          <span>Harisinh Chauhan</span>
+        </div>
+        <div class="detail">
+          <strong>Age</strong>
+          <span>81 years old</span>
+        </div>
+        <div class="detail">
+          <strong>Birthplace</strong>
+          <span>India</span>
+        </div>
+        <div class="detail">
+          <strong>Former Profession</strong>
+          <span>Veterinarian</span>
+        </div>
+        <div class="detail">
+          <strong>Interests</strong>
+          <span>Travel, Exploration & Stock Markets</span>
+        </div>
+        <div class="detail">
+          <strong>Location</strong>
+          <span>Redlands, California, USA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="career" id="career">
+    <div class="section-label">Professional Journey</div>
+    <h2>A Career in Veterinary Medicine</h2>
+    <p class="intro">
+      A former veterinary professional whose career was connected to
+      the care and well-being of animals.
+    </p>
+
+    <div class="career-card">
+      <h3>Former Veterinarian</h3>
+      <div class="location">East Valley Pet Hospital · Redlands, California, USA</div>
+      <p>
+        Harisinh Chauhan worked as a veterinarian at East Valley Pet Hospital.
+        Veterinary medicine is a profession built on knowledge, patience,
+        careful observation, and compassion for animals. This chapter of his
+        life forms an important part of his professional story.
+      </p>
+    </div>
+  </section>
+
+  <section id="interests">
+    <div class="section-label">Beyond the Everyday</div>
+    <h2>What I Enjoy</h2>
+    <p class="intro">
+      Life is richer when there is always something interesting to discover.
+      These are some of Harisinh's favorite interests.
+    </p>
+
+    <div class="interests-grid">
+      <article class="interest-card">
+        <div class="interest-icon" aria-hidden="true">🌍</div>
+        <h3>Traveling</h3>
+        <p>
+          Discovering new destinations, experiencing different surroundings,
+          and enjoying the many wonders our world has to offer.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon" aria-hidden="true">🧭</div>
+        <h3>Exploring</h3>
+        <p>
+          Staying curious about the world, finding new things to learn,
+          and appreciating the stories behind different places.
+        </p>
+      </article>
+
+      <article class="interest-card">
+        <div class="interest-icon" aria-hidden="true">📈</div>
+        <h3>Stock Markets</h3>
+        <p>
+          Following financial markets, keeping up with business developments,
+          and staying interested in the ever-changing world of investing.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="market" id="markets">
+    <div class="section-label">Business & Finance</div>
+    <h2>Following the Financial World</h2>
+    <p class="intro">
+      Stock market news is a favorite subject. CNBC is a particularly
+      important source for keeping up with business, markets, and the economy.
+    </p>
+
+    <div class="market-grid">
+      <article class="market-card">
+        <h3>CNBC</h3>
+        <p>
+          Follow market headlines, company news, financial reporting,
+          economic developments, and business analysis.
+        </p>
+        <a class="market-link"
+           href="https://www.cnbc.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit CNBC →
+        </a>
+      </article>
+
+      <article class="market-card">
+        <h3>CNBC Markets</h3>
+        <p>
+          Explore market coverage, stock performance, financial commentary,
+          and developments that shape the investment landscape.
+        </p>
+        <a class="market-link"
+           href="https://www.cnbc.com/markets/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Explore Markets →
+        </a>
+      </article>
+    </div>
+    <p style="margin-top:24px;color:#aebdd0;font-size:.88rem;">
+      Financial news is provided for general information and is not
+      personalized investment advice.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-label">Let's Connect</div>
+    <h2>Get in Touch</h2>
+    <p class="intro">
+      For a conversation or to get in contact with Harisinh Chauhan,
+      please use the details below.
+    </p>
+
+    <div class="contact-panel">
+      <div class="contact-row">
+        <strong>Email</strong>
+        <a href="mailto:hchauhanom@gmail.com">hchauhanom@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <strong>Phone</strong>
+        <a href="tel:+19094992727">909-499-2727</a>
+      </div>
+      <div class="contact-row">
+        <strong>Location</strong>
+        <span>Redlands, California, United States</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Harisinh Chauhan. All rights reserved.</p>
+  <p style="margin-top:5px;">A life of experience, exploration, and lifelong curiosity.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
